@@ -1,37 +1,31 @@
 <script setup>
-    
-    import { ref } from 'vue';
+import { ref } from 'vue';
 
-    let message = ref('');
-    let items = ref(['Piim', 'Viin', 'Õlu', 'Krõpsud'])
-    
-    function addItem(){
-        if(message.value.trim() !== ''){
-            items.value.push(message.value.trim());
-        }
-        message.value = '';
+
+let modalActive = ref(false);
+
+document.body.addEventListener('keydown', event => {
+    if(event.key === 'Escape'){
+        modalActive.value = false;
     }
+})
 
 </script>
 
 <template>
-    <div class="container mi-2">
-        <div class="field has-addons">
-            <div class="control">
-                <input class="input" type="text" v-model="message" @keypress.enter="addItem">
-            </div>
-            <div class="control">
-                <button class="button is-info" @click="addItem">
-                    Add Item
-                </button>
-            </div>
+    <div class="container">
+        <section class="section">
+            <button class="button is-primary" @click="modalActive=true">Modal Activate</button>
+        </section>
+    </div>
+    <div class="modal" :class="{'is-active': modalActive}">
+        <div class="modal-background" @click="modalActive=false"></div>
+        <div class="modal-content">
+            <p class="image is-4by3">
+                <img src="https://bulma.io/assets/images/placeholders/1280x960.png" alt="">
+            </p>
         </div>
-        <div class="content">
-            <h1>All items</h1>
-            <ul>
-                <li v-for="item in items">{{ item }}</li>
-            </ul>
-        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
     </div>
 </template>
 
