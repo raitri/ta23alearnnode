@@ -1,10 +1,14 @@
 <script setup>
+import { ref } from 'vue';
 import Tabs from './components/Tabs.vue';
-let titles = ['Item1', 'Item2', 'Item3', 'Item4'];
+
+
+
 </script>
 
 <template>
-    <Tabs :items="titles"></Tabs>
+    <Tabs></Tabs>
+    <RouterView></RouterView>
 </template>
 
 <style></style>
