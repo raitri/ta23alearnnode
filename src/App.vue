@@ -1,14 +1,18 @@
 <script setup>
 import { ref } from 'vue';
 import Tabs from './components/Tabs.vue';
-
-
-
 </script>
 
 <template>
     <Tabs></Tabs>
-    <RouterView></RouterView>
+    <div class="container">
+        <section class="section">
+            <Suspense>
+                <RouterView></RouterView>
+            </Suspense>
+        </section>
+    </div>
 </template>
 
-<style></style>
+<style>
+</style>
