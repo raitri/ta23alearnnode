@@ -10,6 +10,7 @@ let joke = ref('');
 // }).catch(err => {
 //     console.log(err);
 // });
+
 try {
     let response = await axios.get('https://api.chucknorris.io/jokes/random');
     joke.value = response.data.value;
