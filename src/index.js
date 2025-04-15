@@ -1,6 +1,8 @@
 import './style.scss';
 import { createApp } from 'vue';
 import { createWebHashHistory, createWebHistory, createMemoryHistory, createRouter } from 'vue-router';
+
+
 import App from './App.vue';
 
 import Modals from './pages/Modals.vue';
@@ -9,6 +11,7 @@ import Chuck from './pages/Chuck.vue';
 import RickAndMorty from './pages/RickAndMorty.vue';
 import CookieClicker from './pages/CookieClicker.vue';
 import WebApis from './pages/WebApis.vue';
+import Leaflet from './pages/Leaflet.vue';
 
 const routes = [
   { path: '/', component: ToDo, name: 'ToDo' },
@@ -17,6 +20,7 @@ const routes = [
   { path: '/rickandmorty', component: RickAndMorty, name: 'Rick And Morty' },
   { path: '/cookieclicker', component: CookieClicker, name: 'Cookie Clicker', meta: {container: false} },
   { path: '/webapis', component: WebApis, name: 'WebApis' },
+  { path: '/leaflet', component: Leaflet, name: 'Leaflet', meta: {container: false} },
 ]
 
 const router = createRouter({
