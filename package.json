@@ -9,7 +9,7 @@
     "build": "webpack --mode=production",
     "start": "webpack serve --mode=development",
     "deploy": "npm run build && surge ./dist raitta23a.surge.sh",
-    "server": "npx nodemon bin/server.js -w bin/server.js"
+    "server": "nodemon bin/server.js -w bin/server.js"
   },
   "keywords": [],
   "author": "",
