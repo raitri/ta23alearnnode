@@ -7,7 +7,7 @@ let zoom = ref(19);
 </script>
 
 <template>
-    <button class="button is-primary" @click="center=[-25.06623, -130.09967]">Go To Home</button>
+    <button class="button is-primary" @click="center=[59.39759, 24.29950]">Go To Home</button>
     <input type="range" min="1" max="19" v-model="zoom">
     <LeafletMap :center="center" :zoom="zoom"></LeafletMap>
     <LeafletMap :center="[24.74337, 59.42708]" :zoom="19"></LeafletMap>
