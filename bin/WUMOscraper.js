@@ -20,7 +20,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let baseUrl = 'http://wumo.com';
+let baseUrl = 'https://wumo.com';
 let url = baseUrl + '';
 for(let i = 0; i < 10; i++) {
     let name = url.replaceAll('/', '').replaceAll(':', '');
@@ -34,10 +34,10 @@ for(let i = 0; i < 10; i++) {
     }
     //console.log(res.data);
     const $ = cheerio.load(data);
-    let src = baseUrl + $('artcile.wumo img').attr('src');
-    let title = $('artcile.wumo img').attr('alt');
+    let src = baseUrl + $('article.wumo img').attr('src');
+    let title = $('article.wumo img').attr('alt');
     console.log(src);
     console.log(title);
-    url = baseUrl + $('artcile.wumo img').attr('href');
+    url = baseUrl + $('article.wumo a.prev').attr('href');
     console.log(url);
 }
